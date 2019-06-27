@@ -1,6 +1,7 @@
 # JackSnipe Engine
 A JavaScript engine built for development of 2D games.
 
+[![Build Status](https://api.travis-ci.org/JustinAkaru/jacksnipe.svg?branch=master)](https://travis-ci.org/JustinAkaru/jacksnipe)
 ---
 
 ## Getting Started
