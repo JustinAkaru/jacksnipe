@@ -1,2 +1,45 @@
-# jacksnipe
-A JS engine built for design of 2D games.
+# JackSnipe Engine
+A JavaScript engine built for development of 2D games.
+
+---
+
+## Getting Started
+
+Download the latest [release](https://github.com/JustinAkaru/jacksnipe/releases).
+
+or
+
+install from npm
+
+```
+npm install --save-dev jacksnipe
+```
+
+---
+
+## Building From Source
+To build the engine from the source code, clone the repository, and install the build dependencies
+
+```
+git clone https://github.com/JustinAkaru/jacksnipe.git
+npm install
+```
+
+then run the build script to build the engine.
+
+```
+npm run build
+```
+
+---
+
+## Support
+Having trouble with JackSnipe Engine? Contact us on [Discord](https://discord.gg/w9TT8qN) or create a new [issue](https://github.com/JustinAkaru/jacksnipe/issues).
+
+---
+
+## License
+JackSnipe Engine is licensed under the terms of the [**MIT**](https://github.com/JustinAkaru/jacksnipe/blob/master/LICENSE) license.
+
+
+
