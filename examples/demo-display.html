@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JackSnipe Display Example</title>
+</head>
+
+<body>
+    <script src="../build/jacksnipe.js"></script>
+    <script>
+        let display = JackSnipe.makeDisplay(window.innerWidth, window.innerHeight);
+        JackSnipe.resizeDisplay(display, 800, 600);
+        JackSnipe.appendDisplay(display);
+    </script>
+</body>
+
+</html>
