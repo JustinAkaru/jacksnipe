@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: graphics/Display.js</title>
+    <title>JSDoc: Source: physics/Rect.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: graphics/Display.js</h1>
+    <h1 class="page-title">Source: physics/Rect.js</h1>
 
     
 
@@ -27,53 +27,34 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * create a display object
- * @param {Number} width - the width of the display
- * @param {Number} height - the height of the display
- * @return {HTMLCanvasElement}
+ * creates a rect object
+ * @param {Number} x - x position of the rect
+ * @param {Number} y - y position of the rect
+ * @param {Number} width - width of the rect
+ * @param {Number} height - height of the rect
+ * @return {Object}
  */
-export function makeDisplay(width, height) {
-    let canvas = document.createElement("canvas");
-    canvas.width = width || window.innerWidth;
-    canvas.height = height || window.innerHeight;
-    canvas.id = "jacksnipeCanvas";
-
-    return canvas;
+export function makeRect(x, y, width, height) {
+    return {
+        x: x,
+        y: y,
+        width: width,
+        height: height,
+        right: x + width,
+        bottom: y + height,
+    };
 }
 
 /**
- * creates a 2d context and makes it the active context.
- * @param {HTMLCanvasElement} display - the display to make a 2d context active for
+ * checks if 2 rects are colliding
+ * @param {Object} rect1 - first rectangle
+ * @param {Object} rect2 - second rectangle
  */
-export function make2DContextCurrent(display){
-    window.ctx = display.getContext("2d");
-}
-
-/**
- * resizes the canvas element to a new width and height
- * @param {HTMLCanvasElement} canvas - the canvas to be resized
- * @param {Number} width - the new canvas width
- * @param {Number} height - the new canvas height
- */
-export function resizeDisplay(display, width, height) {
-    display.width = width;
-    display.height = height;
-}
-
-/**
- * adds the canvas element to the document
- * @param {HTMLCanvasElement} canvas - canvas to be added to the document
- */
-export function appendDisplay(display) {
-    document.body.appendChild(display);
-}
-
-/**
- * clears the display using the currently active graphics context
- * @param {HTMLCanvasElement} display - the display to clear
- */
-export function clearDisplay(display){
-    ctx.clearRect(0,0,display.width,display.height);
+export function doRectsCollide(rect1, rect2) {
+    return (rect1.x &lt; rect2.right &amp;&amp;
+        rect2.x &lt; rect1.right &amp;&amp;
+        rect1.y &lt; rect2.bottom &amp;&amp;
+        rect2.y &lt; rect1.bottom);
 }</code></pre>
         </article>
     </section>
