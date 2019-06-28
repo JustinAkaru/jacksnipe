@@ -10,9 +10,15 @@ export function makeDisplay(width, height) {
     canvas.height = height || window.innerHeight;
     canvas.id = "jacksnipeCanvas";
 
-    window.ctx = canvas.getContext("2d");
-
     return canvas;
+}
+
+/**
+ * creates a 2d context and makes it the active context.
+ * @param {HTMLCanvasElement} display - the display to make a 2d context active for
+ */
+export function make2DContextCurrent(display){
+    window.ctx = display.getContext("2d");
 }
 
 /**
@@ -32,4 +38,12 @@ export function resizeDisplay(display, width, height) {
  */
 export function appendDisplay(display) {
     document.body.appendChild(display);
+}
+
+/**
+ * clears the display using the currently active graphics context
+ * @param {HTMLCanvasElement} display - the display to clear
+ */
+export function clearDisplay(display){
+    ctx.clearRect(0,0,display.width,display.height);
 }

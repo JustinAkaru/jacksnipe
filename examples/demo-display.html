@@ -11,9 +11,16 @@
 <body>
     <script src="../build/jacksnipe.js"></script>
     <script>
+        //create a display reference
         let display = JackSnipe.makeDisplay(window.innerWidth, window.innerHeight);
+        //resize the display
         JackSnipe.resizeDisplay(display, 800, 600);
+        //create a 2d context from the display
+        JackSnip.make2DContextCurrent(display);
+        //add the display to the document
         JackSnipe.appendDisplay(display);
+        //clear the display
+        JackSnipe.clearDisplay(display);
     </script>
 </body>
 

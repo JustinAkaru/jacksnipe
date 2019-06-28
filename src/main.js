@@ -1,4 +1,4 @@
 //JackSnipe Engine
 
 //Graphics
-export { makeDisplay, resizeDisplay, appendDisplay } from "./graphics/Display";
+export { makeDisplay, make2DContextCurrent, resizeDisplay, appendDisplay, clearDisplay } from "./graphics/Display";
