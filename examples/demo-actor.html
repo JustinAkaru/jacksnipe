@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JackSnipe Actor Example</title>
+</head>
+
+<body>
+    <script src="../build/jacksnipe.js"></script>
+    <script>
+        //create a display reference
+        let display = JackSnipe.makeDisplay(window.innerWidth, window.innerHeight);
+        //resize the display
+        JackSnipe.resizeDisplay(display, 800, 600);
+        //create a 2d context from the display
+        JackSnip.make2DContextCurrent(display);
+        //add the display to the document
+        JackSnipe.appendDisplay(display);
+        //clear the display
+        JackSnipe.clearDisplay(display);
+
+        //create an actor
+        let actor = JackSnipe.makeActor(image, 0, 0, 100, 100);
+        //draw an actor
+        JackSnipe.drawActor(actor);
+    </script>
+</body>
+
+</html>

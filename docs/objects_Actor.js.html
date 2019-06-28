@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: objects/Actor.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,36 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: objects/Actor.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * creates an actor containing data to render with
+ * @param {HTMLImageElement} image - the image to display
+ * @param {Number} x - the actors's x position
+ * @param {Number} y - the actors's y position
+ * @param {Number} width - the with of the actor
+ * @param {Number} height - the height of the actor
+ * @return {Object}
+ */
+export function makeActor(image, x, y, width, height) {
+    return { image: image, x: x, y: y, width: width, height: height };
+}
+/**
+ * draws an actor using the currently bound context
+ * @param {Object} actor - the  actor to render
+ */
+export function drawActor(actor) {
+    ctx.drawImage(actor.image, actor.x, actor.y, actor.width, actor.height);
+}</code></pre>
+        </article>
+    </section>
 
 
 

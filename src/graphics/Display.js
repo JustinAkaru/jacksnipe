@@ -1,5 +1,5 @@
 /**
- * create a display object and create a global context reference
+ * create a display object
  * @param {Number} width - the width of the display
  * @param {Number} height - the height of the display
  * @return {HTMLCanvasElement}
