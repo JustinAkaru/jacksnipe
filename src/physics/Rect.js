@@ -21,6 +21,7 @@ export function makeRect(x, y, width, height) {
  * checks if 2 rects are colliding
  * @param {Object} rect1 - first rectangle
  * @param {Object} rect2 - second rectangle
+ * @return {Boolean}
  */
 export function doRectsCollide(rect1, rect2) {
     return (rect1.x < rect2.right &&
