@@ -1,6 +1,7 @@
 //JackSnipe Engine
 
 //Graphics
-export { makeDisplay, make2DContextCurrent, resizeDisplay, appendDisplay, clearDisplay } from "./graphics/Display";
-export { makeActor, drawActor } from "./objects/Actor";
-export { makeRect, doRectsCollide } from "./physics/Rect";
+export { Display } from "./graphics/Display";
+export { Actor } from "./objects/Actor";
+export { Stage } from "./objects/Stage";
+export { Rect } from "./physics/Rect";

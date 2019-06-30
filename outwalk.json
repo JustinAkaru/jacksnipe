@@ -1,1 +1,1 @@
-{"input":"src/main.js","output":"build/jacksnipe.js","format":"umd","namespace":"JackSnipe"}
+{"input":"src/main.js","output":"build/jacksnipe.js","format":"esm","namespace":"Jacksnipe","preamble":"//Copyright Daniel Wedding 2019. JackSnipe"}

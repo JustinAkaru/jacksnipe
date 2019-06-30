@@ -1,19 +1,57 @@
 /**
- * creates an actor containing data to render with
- * @param {HTMLImageElement} image - the image to display
- * @param {Number} x - the actors's x position
- * @param {Number} y - the actors's y position
- * @param {Number} width - the with of the actor
- * @param {Number} height - the height of the actor
- * @return {Object}
+ * an Actor is an object that contains information to render and object
+ * @author jleeson
  */
-export function makeActor(image, x, y, width, height) {
-    return { image: image, x: x, y: y, width: width, height: height };
-}
-/**
- * draws an actor using the currently bound context
- * @param {Object} actor - the  actor to render
- */
-export function drawActor(actor) {
-    ctx.drawImage(actor.image, actor.x, actor.y, actor.width, actor.height);
+export class Actor {
+
+    /**
+     * 
+     * @param {HTMLImageElement} image
+     * @param {Number} x 
+     * @param {Number} y 
+     * @param {Number} width 
+     * @param {Number} height 
+     */
+    constructor(image, x, y, width, height) {
+        /**
+         * @type {HTMLImageElement}
+         */
+        this.image = image;
+        /**
+         * @type {Number}
+         */
+        this.x = x;
+        /**
+         * @type {Number}
+         */
+        this.y = y;
+        /**
+         * @type {Number}
+         */
+        this.width = width;
+        /**
+         * @type {Number}
+         */
+        this.height = height;
+    }
+
+    /**
+     * set the position of the actor
+     * @param {Number} x - new actor x position
+     * @param {Number} y - new actor y position
+     */
+    moveTo(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    /**
+     * sets the size of the actor
+     * @param {Number} width - new width of the actor
+     * @param {Number} height - new height of the actor
+     */
+    resize(width, height) {
+        this.width = width;
+        this.height = height;
+    }
 }

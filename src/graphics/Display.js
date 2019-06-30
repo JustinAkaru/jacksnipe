@@ -1,49 +1,62 @@
 /**
- * create a display object
- * @param {Number} width - the width of the display
- * @param {Number} height - the height of the display
- * @return {HTMLCanvasElement}
+ * A Display is an object that creates a HTMLCanvasContext and CanvasRenderingContext2D
+ * @author jleeson
  */
-export function makeDisplay(width, height) {
-    let canvas = document.createElement("canvas");
-    canvas.width = width || window.innerWidth;
-    canvas.height = height || window.innerHeight;
-    canvas.id = "jacksnipeCanvas";
+export class Display {
 
-    return canvas;
-}
+    constructor() {
+        /**
+         * @type {HTMLCanvasElement}
+         */
+        this.canvas = document.createElement("canvas");
+        this.canvas.id = "Jacksnipe-Canvas";
+        /**
+         * @type {Number}
+         */
+        this.width = width;
+        /**
+         * @type {Number}
+         */
+        this.height = height;
+    }
 
-/**
- * creates a 2d context and makes it the active context.
- * @param {HTMLCanvasElement} display - the display to make a 2d context active for
- */
-export function make2DContextCurrent(display){
-    window.ctx = display.getContext("2d");
-}
+    /**
+     * creates an HTMLCanvasElement and adds a CanvasRenderingContext2D to the display
+     * @param {Number} width - width of the display
+     * @param {Number} height - height of the display
+     */
+    makeDisplay(width, height) {
+        this.width = width;
+        this.height = height;
+        this.canvas.width = width;
+        this.canvas.height = height;
+        window.ctx = this.canvas.getContext("2d");
+    }
 
-/**
- * resizes the canvas element to a new width and height
- * @param {HTMLCanvasElement} canvas - the canvas to be resized
- * @param {Number} width - the new canvas width
- * @param {Number} height - the new canvas height
- */
-export function resizeDisplay(display, width, height) {
-    display.width = width;
-    display.height = height;
-}
+    /**
+     * adds a display to the page
+     * @param {Display} display - display to add to the page
+     */
+    static useDisplay(display) {
+        document.body.appendChild(display.canvas);
+    }
 
-/**
- * adds the canvas element to the document
- * @param {HTMLCanvasElement} canvas - canvas to be added to the document
- */
-export function appendDisplay(display) {
-    document.body.appendChild(display);
-}
+    /** 
+     * resizes the display
+     * @param {Number} width - new width of the display
+     * @param {Number} height -  new height of the display
+     */
+    resizeDisplay(width, height) {
+        this.width = width;
+        this.height = height;
+        this.canvas.width = width;
+        this.canvas.height = height;
+    }
 
-/**
- * clears the display using the currently active graphics context
- * @param {HTMLCanvasElement} display - the display to clear
- */
-export function clearDisplay(display){
-    ctx.clearRect(0,0,display.width,display.height);
+    /** clears the display */
+    clearDisplay() {
+        ctx.clearRect(0, 0, this.width, this.height);
+    }
+
+
 }

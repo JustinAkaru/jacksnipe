@@ -1,31 +1,32 @@
 /**
- * creates a rect object
- * @param {Number} x - x position of the rect
- * @param {Number} y - y position of the rect
- * @param {Number} width - width of the rect
- * @param {Number} height - height of the rect
- * @return {Object}
+ * Rect is an object to detect simple bounding box collision
+ * @author jleeson
  */
-export function makeRect(x, y, width, height) {
-    return {
-        x: x,
-        y: y,
-        width: width,
-        height: height,
-        right: x + width,
-        bottom: y + height,
-    };
-}
+export class Rect {
 
-/**
- * checks if 2 rects are colliding
- * @param {Object} rect1 - first rectangle
- * @param {Object} rect2 - second rectangle
- * @return {Boolean}
- */
-export function doRectsCollide(rect1, rect2) {
-    return (rect1.x < rect2.right &&
-        rect2.x < rect1.right &&
-        rect1.y < rect2.bottom &&
-        rect2.y < rect1.bottom);
+    /**
+     * 
+     * @param {Number} x 
+     * @param {Number} y 
+     * @param {Number} width 
+     * @param {Number} height
+     */
+    constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    /**
+     * checks if 2 rects are colliding
+     * @param {Rect} rect1 - first rect to check
+     * @param {Rect} rect2 - second rect to check
+     */
+    static doRectsCollide(rect1, rect2){
+        return (rect1.x  < (rect2.x + rect2.width) &&
+            rect2.x < (rect1.x + rect1.width) &&
+            rect1.y < (rect2.y + rect2.height) &&
+            rect2.y < (rect1.y + rect1.height));
+    }
 }
