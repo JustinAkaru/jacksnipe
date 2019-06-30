@@ -13,11 +13,11 @@ export class Display {
         /**
          * @type {Number}
          */
-        this.width = width;
+        this.width = null;
         /**
          * @type {Number}
          */
-        this.height = height;
+        this.height = null;
     }
 
     /**
