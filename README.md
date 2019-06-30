@@ -18,6 +18,10 @@ npm install --save-dev jacksnipe
 
 ---
 
+## Documentation
+
+Read our Documentation [here](https://justinakaru.github.io/jacksnipe/index.html).
+
 ## Building From Source
 To build the engine from the source code, clone the repository, and install the build dependencies
 

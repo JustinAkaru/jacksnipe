@@ -5,7 +5,7 @@
   "main": "build/jacksnipe.js",
   "scripts": {
     "build": "outwalk compile",
-    "gen-docs": "jsdoc src/** -d docs"
+    "gen-docs": "jsdoc src/** README.md -d docs"
   },
   "repository": {
     "type": "git",
