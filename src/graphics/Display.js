@@ -31,7 +31,7 @@ export class Display {
         this.canvas.width = width;
         this.canvas.height = height;
         window.ctx = this.canvas.getContext("2d");
-        window.canvas = canvas;
+        window.canvas = this.canvas;
     }
 
     /**
