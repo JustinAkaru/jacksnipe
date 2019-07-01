@@ -60,15 +60,15 @@ export class Camera {
 
     /** update the camera */
     updateCamera() {
-        this.aspectRatio = ctx.canvas.width / ctx.canvas.height;
+        this.aspectRatio = canvas.width / canvas.height;
         this.width = this.distance * Math.tan(this.fov);
         this.height = this.width / this.aspectRatio;
         this.left = this.position.x - (this.width / 2.0);
         this.top = this.position.y - (this.height / 2.0);
         this.right = this.left + this.width;
         this.bottom = this.top + this.height;
-        this.scale.x = ctx.canvas.width / ctx.viewport.width;
-        this.scale.y = ctx.canvas.height / ctx.viewport.height;
+        this.scale.x = canvas.width / this.width;
+        this.scale.y = canvas.height / this.height;
     }
 
     /**
