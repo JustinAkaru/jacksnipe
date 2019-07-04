@@ -39,7 +39,7 @@ export class Camera {
 
     /** stop camera calculatioins */
     stopCamera() {
-        this.ctx.restore();
+        ctx.restore();
     }
 
     /** 
