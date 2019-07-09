@@ -90,4 +90,17 @@ export class Camera {
         this.position.y = y;
         this.updateCamera();
     }
+
+    /**
+     * converts screen coordinates to world coordinates
+     * @param {Number} x - screen x
+     * @param {Number} y - screen y
+     * @return {Array}
+     */
+    makeScreenCoordsWorldCoords(x, y) {
+        let coordinates = [];
+        coordinates[0] = (x / this.scale.x) + this.left;
+        coordinates[1] = (y / this.scale.y) + this.top;
+        return coordinates;
+    }
 }

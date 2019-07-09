@@ -19,6 +19,6 @@
   "homepage": "https://github.com/JustinAkaru/jacksnipe#readme",
   "devDependencies": {
     "jsdoc": "^3.6.2",
-    "outwalk": "^1.3.3"
+    "outwalk": "^1.4.0"
   }
 }
